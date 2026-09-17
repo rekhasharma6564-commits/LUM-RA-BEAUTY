@@ -1,0 +1,356 @@
+/* ==========================================================================
+   LUMÉRA BEAUTY — RESPONSIVE DESIGN STYLESHEET
+   Comprehensive Breakpoints: 1200px, 992px, 768px, 576px, 480px, 360px
+   ========================================================================== */
+
+/* --- 1200px Breakpoint (Laptops & Desktops) --- */
+@media (max-width: 1200px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  }
+
+  .footer-col-newsletter {
+    grid-column: 1 / -1;
+    max-width: 500px;
+  }
+}
+
+/* --- 992px Breakpoint (Tablets Landscape & Small Desktops) --- */
+@media (max-width: 992px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .header-search .search-input-wrap {
+    width: 170px;
+  }
+
+  .header-search .search-input-wrap:focus-within {
+    width: 220px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shop-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-sidebar {
+    position: static;
+    margin-bottom: 24px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .cart-layout-grid,
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary-card {
+    position: static;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quickview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quickview-gallery {
+    padding: 20px;
+  }
+
+  .promo-banner {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .promo-content h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* --- 768px Breakpoint (Tablets Portrait & Large Phones) --- */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+  }
+
+  .floating-card-1 {
+    left: 0;
+    bottom: 10px;
+  }
+
+  .floating-card-2 {
+    right: 0;
+    top: 10px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product-title {
+    font-size: 0.88rem;
+  }
+
+  .product-actions .btn {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 14px;
+    text-align: center;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-track {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .timeline-track::before {
+    top: 0;
+    bottom: 0;
+    left: 19px;
+    right: auto;
+    width: 3px;
+    height: 100%;
+  }
+
+  .timeline-step {
+    flex-direction: row;
+    gap: 16px;
+    text-align: left;
+  }
+}
+
+/* --- 576px Breakpoint (Standard Mobile Phones) --- */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .announcement-links {
+    display: none;
+  }
+
+  .announcement-bar {
+    justify-content: center;
+    font-size: 0.75rem;
+  }
+
+  .header-search {
+    display: none; /* Accessible in mobile drawer / search page */
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    aspect-ratio: 1/0.8;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .details-title {
+    font-size: 1.6rem;
+  }
+
+  .details-actions-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .details-actions-row .quantity-stepper {
+    justify-content: center;
+  }
+
+  .cart-table th,
+  .cart-table td {
+    padding: 10px 8px;
+  }
+
+  .cart-item-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cart-item-info h4 {
+    font-size: 0.85rem;
+  }
+
+  .tab-nav {
+    gap: 16px;
+    overflow-x: auto;
+  }
+
+  .tab-nav-btn {
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .success-card {
+    padding: 24px 16px;
+  }
+}
+
+/* --- 480px Breakpoint (Compact Mobile) --- */
+@media (max-width: 480px) {
+  .logo-main {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .action-icon-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .price-current {
+    font-size: 1rem;
+  }
+
+  .price-old {
+    font-size: 0.75rem;
+  }
+
+  .about-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 360px Breakpoint (Ultra Compact Mobile) --- */
+@media (max-width: 360px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 0.82rem;
+  }
+}

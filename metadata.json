@@ -1,0 +1,6 @@
+{
+  "name": "Luméra Beauty",
+  "description": "Premium Beauty & Cosmetics E-Commerce Website with multi-page shopping, cart, wishlist, checkout, demo payments, WhatsApp integration, and theme switcher.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

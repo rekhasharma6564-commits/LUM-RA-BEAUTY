@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | LUMÉRA BEAUTY</title>
+  <meta name="description" content="Answers to common questions about Luméra Beauty products, shipping, returns, and ingredients.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .faq-item {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 18px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: background var(--transition-fast);
+    }
+    .faq-question:hover {
+      background: var(--bg-tertiary);
+    }
+    .faq-answer {
+      padding: 0 20px 18px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.92rem;
+      display: none;
+    }
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+    .faq-question i {
+      transition: transform var(--transition-fast);
+      color: var(--accent-gold);
+    }
+  </style>
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="faq.html" class="nav-link active">FAQ</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle-btn action-icon-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="cart.html" class="action-icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container" style="max-width: 900px;">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Frequently Asked Questions</span>
+      </div>
+
+      <div class="section-title-wrap" style="text-align:left; margin-bottom: 32px;">
+        <span class="section-eyebrow">Knowledge Base</span>
+        <h1 class="section-title" style="font-size:2.4rem;">Frequently Asked Questions</h1>
+        <p class="section-desc">Find quick answers regarding our products, clean formulations, deliveries, and returns.</p>
+      </div>
+
+      <div class="faq-list">
+        
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>Are Luméra Beauty formulations 100% cruelty-free and vegan?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes, absolutely. None of our formulations or raw ingredients are ever tested on animals. All products are 100% certified cruelty-free and vegan.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How long does domestic shipping take across India?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Standard delivery takes 3 to 5 business days across major metros and tier-2 cities. Priority Express Air courier delivers within 24 to 48 hours.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is complimentary shipping available?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes! All orders valued above ₹999 qualify automatically for Free Standard Shipping throughout India.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Which coupon codes can I apply at checkout?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            You can use <strong>GLOW20</strong> for 20% OFF on orders over ₹1,500, <strong>WELCOME15</strong> for 15% OFF for new members (orders above ₹800), and <strong>BEAUTY10</strong> for 10% OFF any order.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I place an order or enquiry directly via WhatsApp?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes, you can directly connect with our beauty concierge at <strong>+91 9887972121</strong> or use our dedicated <a href="enquiry.html" style="color:var(--accent-gold); font-weight:600;">WhatsApp Enquiry Page</a>.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are Luméra skincare serums safe for sensitive skin?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Our clinical range is formulated without parabens, phthalates, synthetic sulfates, or harsh fragrances. They are dermatologically tested for hypoallergenic tolerance.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What is your return and exchange policy?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            We offer a 7-day hassle-free doorstep replacement for items received damaged, defective, or incorrect in seal.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Are Cash on Delivery (COD) and UPI accepted?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes! We accept UPI (Google Pay, PhonePe, Paytm), Visa/MasterCard credit and debit cards, Net Banking, and Cash on Delivery.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+  <button id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const items = document.querySelectorAll('.faq-item');
+      items.forEach(item => {
+        const q = item.querySelector('.faq-question');
+        q.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

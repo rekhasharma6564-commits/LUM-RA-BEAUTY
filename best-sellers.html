@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Selling Cosmetics & Skincare | LUMÉRA BEAUTY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="makeup.html" class="nav-link">Makeup</a>
+          <a href="skincare.html" class="nav-link">Skincare</a>
+          <a href="best-sellers.html" class="nav-link active">Best Sellers</a>
+          <a href="offers.html" class="nav-link">Offers</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle-btn action-icon-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="wishlist.html" class="action-icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-count wishlist-count-badge">0</span></a>
+          <a href="cart.html" class="action-icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+          <a href="account.html" class="action-icon-btn" title="Account"><i class="fa-regular fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="shop-page-wrap">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Best Sellers</span>
+      </div>
+
+      <div class="section-title-wrap" style="text-align:left; margin-bottom: 32px;">
+        <span class="section-eyebrow">Most Loved Formulas</span>
+        <h1 class="section-title" style="font-size:2.5rem;">Luméra Best Sellers</h1>
+        <p class="section-desc">Our iconic formulations rated 4.8★ and above by over 50,000 beauty connoisseurs.</p>
+      </div>
+
+      <div class="product-grid" id="shopProductsGrid"></div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card">
+      <button class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <div id="toastContainer"></div>
+  <button id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof initShopFilterEngine === 'function') {
+        initShopFilterEngine(null, 'best');
+      }
+    });
+  </script>
+</body>
+</html>

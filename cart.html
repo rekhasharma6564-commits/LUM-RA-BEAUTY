@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Bag | LUMÉRA BEAUTY</title>
+  <meta name="description" content="View items in your Luméra Beauty shopping bag and apply coupon codes.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="makeup.html" class="nav-link">Makeup</a>
+          <a href="skincare.html" class="nav-link">Skincare</a>
+          <a href="offers.html" class="nav-link">Offers</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle-btn action-icon-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="wishlist.html" class="action-icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-count wishlist-count-badge">0</span></a>
+          <a href="cart.html" class="action-icon-btn active" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+          <a href="account.html" class="action-icon-btn" title="Account"><i class="fa-regular fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-page-wrap">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Shopping Bag</span>
+      </div>
+
+      <div class="section-title-wrap" style="text-align:left; margin-bottom: 32px;">
+        <span class="section-eyebrow">Your Bag</span>
+        <h1 class="section-title" style="font-size:2.4rem;">Review Shopping Bag</h1>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state-box" id="cartEmptyState" style="display:none;">
+        <i class="fa-solid fa-bag-shopping empty-state-icon"></i>
+        <h3 class="empty-state-title">Your Shopping Bag is Empty</h3>
+        <p class="empty-state-text">Explore our award-winning cosmetics, clinical skincare, and luxury perfumes.</p>
+        <a href="shop.html" class="btn btn-primary btn-lg">Explore Beauty Catalogue</a>
+      </div>
+
+      <!-- Cart Grid -->
+      <div class="cart-layout-grid" id="cartContentLayout">
+        
+        <!-- Items Table -->
+        <div class="cart-table-card">
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cartItemsContainer">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:24px; padding-top:20px; border-top:1px solid var(--border-color); flex-wrap:wrap; gap:16px;">
+            <a href="shop.html" class="btn btn-outline">
+              <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+            </a>
+            <button class="btn btn-outline" onclick="clearCart(); showToast('Cart cleared', 'info'); renderCartPage();">
+              Clear Bag
+            </button>
+          </div>
+        </div>
+
+        <!-- Summary & Coupon Sidebar -->
+        <div class="order-summary-card">
+          <h3 class="summary-title">Order Summary</h3>
+
+          <!-- Coupon Input -->
+          <div style="margin-bottom: 20px;">
+            <label style="font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; display: block;">Have a Promo Coupon?</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="text" id="couponCodeInput" class="form-input" placeholder="e.g. GLOW20" style="text-transform: uppercase;">
+              <button class="btn btn-primary" id="applyCouponBtn">Apply</button>
+            </div>
+            <div id="appliedCouponTag"></div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 6px;">
+              Try: <strong>GLOW20</strong> (20% off > ₹1500) or <strong>BEAUTY10</strong>
+            </p>
+          </div>
+
+          <div class="summary-row">
+            <span>Bag Subtotal</span>
+            <span id="cartSubtotal">₹0</span>
+          </div>
+          
+          <div class="summary-row" id="cartDiscountRow" style="display: none; color: #16a34a;">
+            <span>Coupon Savings</span>
+            <span id="cartDiscount">-₹0</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Estimated Shipping</span>
+            <span id="cartShipping">₹0</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Estimated GST (5%)</span>
+            <span id="cartTax">₹0</span>
+          </div>
+
+          <div class="summary-row summary-total">
+            <span>Grand Total</span>
+            <span id="cartGrandTotal">₹0</span>
+          </div>
+
+          <a href="checkout.html" class="btn btn-primary btn-full btn-lg" style="margin-top: 24px;">
+            Proceed to Checkout <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+          <div style="text-align: center; margin-top: 16px; font-size: 0.8rem; color: var(--text-secondary);">
+            <i class="fa-solid fa-lock"></i> 256-Bit SSL Encrypted Checkout
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+  <button id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/whatsapp.js"></script>
+</body>
+</html>

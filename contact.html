@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Customer Support | LUMÉRA BEAUTY</title>
+  <meta name="description" content="Reach the Luméra Beauty concierge for beauty consultations, orders, and inquiries.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle-btn action-icon-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="cart.html" class="action-icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Contact Us</span>
+      </div>
+
+      <div class="section-title-wrap" style="text-align:left; margin-bottom: 32px;">
+        <span class="section-eyebrow">Concierge & Assistance</span>
+        <h1 class="section-title" style="font-size:2.4rem;">Get in Touch</h1>
+        <p class="section-desc">Have a question about skin pairing or your order? Our beauty concierge team is here for you.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+        
+        <!-- Contact Information -->
+        <div>
+          <div style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:28px; margin-bottom:24px;">
+            <h3 style="font-size:1.3rem; margin-bottom:16px;">Direct Channels</h3>
+            
+            <div style="display:flex; gap:14px; margin-bottom:16px;">
+              <div class="trust-icon" style="background:var(--accent-gold-light);"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <strong>WhatsApp Direct Order & Enquiry</strong>
+                <p style="color:var(--text-secondary); margin:2px 0 0; font-size:0.9rem;">+91 98879 72121</p>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:14px; margin-bottom:16px;">
+              <div class="trust-icon" style="background:var(--accent-gold-light);"><i class="fa-regular fa-envelope"></i></div>
+              <div>
+                <strong>Email Support</strong>
+                <p style="color:var(--text-secondary); margin:2px 0 0; font-size:0.9rem;">care@lumerabeauty.com</p>
+              </div>
+            </div>
+
+            <div style="display:flex; gap:14px;">
+              <div class="trust-icon" style="background:var(--accent-gold-light);"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <strong>Flagship Studio</strong>
+                <p style="color:var(--text-secondary); margin:2px 0 0; font-size:0.9rem;">Luméra Beauty Laboratories, Jubilee Hills, Hyderabad 500033</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-tertiary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:20px; text-align:center;">
+            <h4>Looking for Wholesale or Bulk Orders?</h4>
+            <p style="font-size:0.85rem; color:var(--text-secondary); margin:6px 0 16px;">Generate instant quotes directly on WhatsApp with our team.</p>
+            <a href="enquiry.html" class="btn btn-primary btn-sm"><i class="fa-brands fa-whatsapp"></i> WhatsApp Enquiry Page</a>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="checkout-form-card">
+          <h3 style="font-size:1.3rem; margin-bottom:16px;">Send a Message</h3>
+          <form onsubmit="event.preventDefault(); showToast('Message submitted. Our concierge will reply within 24 hours.', 'success'); this.reset();">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-input" required placeholder="e.g. Priyanshi Mehta">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" required placeholder="priyanshi@example.com">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <input type="text" class="form-input" required placeholder="Product question / Order inquiry">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-input" rows="4" required placeholder="How can our beauty advisors assist you today?"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+  <button id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders | LUMÉRA BEAUTY</title>
+  <meta name="description" content="View your order history, invoices, and tracking statuses at Luméra Beauty.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="account.html" class="nav-link">My Account</a>
+          <a href="my-orders.html" class="nav-link active">Orders</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle-btn action-icon-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="cart.html" class="action-icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+          <a href="account.html" class="action-icon-btn" title="Account"><i class="fa-regular fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="account.html">Account</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>My Orders</span>
+      </div>
+
+      <div class="section-title-wrap" style="text-align:left; margin-bottom: 32px;">
+        <span class="section-eyebrow">Purchase History</span>
+        <h1 class="section-title" style="font-size:2.4rem;">My Past Orders</h1>
+      </div>
+
+      <div id="myOrdersListContainer">
+        <!-- Rendered by inline script -->
+      </div>
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+  <button id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('myOrdersListContainer');
+      let orders = [];
+      try {
+        orders = JSON.parse(localStorage.getItem('lumera_orders')) || [];
+      } catch(e) {}
+
+      if (orders.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state-box">
+            <i class="fa-solid fa-box-open empty-state-icon"></i>
+            <h3 class="empty-state-title">No Orders Placed Yet</h3>
+            <p class="empty-state-text">Your past luxury cosmetics orders and invoices will appear right here.</p>
+            <a href="shop.html" class="btn btn-primary">Start Shopping</a>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = orders.map(order => `
+        <div style="background:var(--bg-secondary); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:24px; margin-bottom:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid var(--border-color); padding-bottom:16px; margin-bottom:16px;">
+            <div>
+              <span style="font-size:0.8rem; color:var(--text-secondary); text-transform:uppercase; letter-spacing:1px;">Order Reference</span>
+              <h3 style="font-size:1.2rem; margin-top:2px;">#${order.orderId}</h3>
+            </div>
+            <div>
+              <span style="font-size:0.8rem; color:var(--text-secondary);">Date: ${order.date}</span>
+            </div>
+            <div>
+              <span class="stock-status stock-in" style="font-size:0.85rem;">Status: ${order.orderStatus}</span>
+            </div>
+            <div>
+              <strong style="font-size:1.2rem; color:var(--accent-gold);">₹${order.financials.grandTotal}</strong>
+            </div>
+          </div>
+
+          <div style="margin-bottom:16px;">
+            ${order.items.map(i => `
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; font-size:0.9rem;">
+                <div style="display:flex; align-items:center; gap:12px;">
+                  <img src="${i.image}" style="width:40px; height:40px; border-radius:4px; object-fit:cover;">
+                  <span>${i.name} (Qty: ${i.quantity})</span>
+                </div>
+                <span>₹${i.price * i.quantity}</span>
+              </div>
+            `).join('')}
+          </div>
+
+          <div style="display:flex; gap:10px; justify-content:flex-end; border-top:1px solid var(--border-color); padding-top:14px;">
+            <a href="order-tracking.html?orderId=${order.orderId}" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-truck-fast"></i> Track Package
+            </a>
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

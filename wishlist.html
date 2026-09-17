@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Beauty Wishlist | LUMÉRA BEAUTY</title>
+  <meta name="description" content="Your saved luxury cosmetics and favorite skincare products.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="makeup.html" class="nav-link">Makeup</a>
+          <a href="skincare.html" class="nav-link">Skincare</a>
+          <a href="offers.html" class="nav-link">Offers</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle-btn action-icon-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="wishlist.html" class="action-icon-btn active" title="Wishlist"><i class="fa-solid fa-heart" style="color:var(--accent-rose);"></i><span class="badge-count wishlist-count-badge">0</span></a>
+          <a href="cart.html" class="action-icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+          <a href="account.html" class="action-icon-btn" title="Account"><i class="fa-regular fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wishlist-page-wrap">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>My Wishlist</span>
+      </div>
+
+      <div class="section-title-wrap" style="text-align:left; margin-bottom: 32px;">
+        <span class="section-eyebrow">Saved Favorites</span>
+        <h1 class="section-title" style="font-size:2.4rem;">My Beauty Wishlist <span id="wishlistCountHeader" style="font-size:1.4rem; color:var(--text-secondary); font-family:var(--font-body); font-weight:normal;"></span></h1>
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state-box" id="wishlistEmptyState" style="display:none;">
+        <i class="fa-regular fa-heart empty-state-icon"></i>
+        <h3 class="empty-state-title">Your Wishlist is Empty</h3>
+        <p class="empty-state-text">Explore our award-winning cosmetics and save your favorite formulas here.</p>
+        <a href="shop.html" class="btn btn-primary">Start Exploring</a>
+      </div>
+
+      <!-- Wishlist Grid -->
+      <div class="product-grid" id="wishlistProductsGrid">
+        <!-- Dynamically rendered via wishlist.js -->
+      </div>
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+  <button id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/whatsapp.js"></script>
+</body>
+</html>

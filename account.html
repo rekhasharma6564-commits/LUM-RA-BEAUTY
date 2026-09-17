@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard & Account | LUMÉRA BEAUTY</title>
+  <meta name="description" content="Manage your Luméra Beauty profile, addresses, and order history.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="account.html" class="nav-link active">Account</a>
+          <a href="my-orders.html" class="nav-link">My Orders</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle-btn action-icon-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="wishlist.html" class="action-icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-count wishlist-count-badge">0</span></a>
+          <a href="cart.html" class="action-icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="account-page-wrap">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>My Account</span>
+      </div>
+
+      <!-- NOT LOGGED IN STATE -->
+      <div id="accountNotLoggedIn" style="text-align:center; padding:60px 20px;">
+        <i class="fa-regular fa-circle-user" style="font-size:3.5rem; color:var(--accent-gold); margin-bottom:16px;"></i>
+        <h2 style="font-size:2rem; margin-bottom:8px;">Welcome to Luméra Beauty VIP</h2>
+        <p style="color:var(--text-secondary); max-width:450px; margin:0 auto 24px;">Sign in to view your past orders, access exclusive VIP discounts, and manage saved delivery addresses.</p>
+        <div style="display:flex; gap:12px; justify-content:center;">
+          <a href="login.html" class="btn btn-primary btn-lg">Sign In</a>
+          <a href="signup.html" class="btn btn-outline btn-lg">Create Account</a>
+        </div>
+      </div>
+
+      <!-- LOGGED IN STATE -->
+      <div id="accountLoggedIn" style="display:none;">
+        <div class="account-grid">
+          
+          <!-- Sidebar -->
+          <div class="account-sidebar-card">
+            <div class="account-user-badge">
+              <div class="user-avatar" id="profileAvatarIcon"><i class="fa-solid fa-user"></i></div>
+              <h3 id="profileDisplayName">Radhika Sen</h3>
+              <p id="profileDisplayEmail" style="font-size:0.85rem; color:var(--text-secondary);">radhika@example.com</p>
+              <p id="profileDisplayMobile" style="font-size:0.8rem; color:var(--text-muted);">+91 98879 72121</p>
+            </div>
+
+            <div class="account-nav-list">
+              <a href="account.html" class="account-nav-item active"><i class="fa-solid fa-user"></i> Profile Details</a>
+              <a href="my-orders.html" class="account-nav-item"><i class="fa-solid fa-box-open"></i> Order History</a>
+              <a href="wishlist.html" class="account-nav-item"><i class="fa-solid fa-heart"></i> Saved Wishlist</a>
+              <a href="order-tracking.html" class="account-nav-item"><i class="fa-solid fa-truck-fast"></i> Track Package</a>
+              <button id="logoutBtn" class="account-nav-item" style="color:var(--accent-rose); width:100%; text-align:left; background:none; border:none; cursor:pointer;">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Profile Area -->
+          <div>
+            <!-- Profile Form Card -->
+            <div class="checkout-form-card" style="margin-bottom:28px;">
+              <h3 style="font-size:1.4rem; margin-bottom:20px;">Edit Profile Information</h3>
+              <form id="profileUpdateForm">
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" id="profileInputName" class="form-input">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="tel" id="profileInputMobile" class="form-input">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address (Read-only)</label>
+                  <input type="email" id="profileInputEmail" class="form-input" readonly style="opacity:0.7;">
+                </div>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </form>
+            </div>
+
+            <!-- Recent Orders Box -->
+            <div class="checkout-form-card">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+                <h3 style="font-size:1.4rem; margin:0;">Recent Orders</h3>
+                <a href="my-orders.html" style="font-size:0.85rem; color:var(--accent-gold); font-weight:600;">View All</a>
+              </div>
+              <div id="accountRecentOrders">
+                <!-- Populated dynamically by auth.js -->
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

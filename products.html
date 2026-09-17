@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Products | LUMÉRA BEAUTY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <div class="announcement-bar">
+    <div class="announcement-text">✨ <span>COMPLIMENTARY SHIPPING</span> on orders above ₹999 | Code: <strong>GLOW20</strong> for 20% OFF</div>
+    <div class="announcement-links">
+      <a href="enquiry.html"><i class="fa-brands fa-whatsapp"></i> Wholesale Enquiry</a>
+      <a href="order-tracking.html"><i class="fa-solid fa-truck-fast"></i> Track Order</a>
+      <a href="contact.html"><i class="fa-regular fa-envelope"></i> Help</a>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn" aria-label="Open Navigation"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="products.html" class="nav-link active">All Products</a>
+          <a href="makeup.html" class="nav-link">Makeup</a>
+          <a href="skincare.html" class="nav-link">Skincare</a>
+          <a href="haircare.html" class="nav-link">Haircare</a>
+          <a href="fragrance.html" class="nav-link">Fragrance</a>
+          <a href="offers.html" class="nav-link">Offers</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+        <div class="header-actions">
+          <div class="header-search">
+            <form class="search-form">
+              <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass search-btn"></i>
+                <input type="text" class="search-input" placeholder="Search beauty...">
+              </div>
+            </form>
+          </div>
+          <button class="theme-toggle-btn action-icon-btn" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+          <a href="wishlist.html" class="action-icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-count wishlist-count-badge">0</span></a>
+          <a href="cart.html" class="action-icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+          <a href="account.html" class="action-icon-btn" title="Account"><i class="fa-regular fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+      <button class="mobile-drawer-close action-icon-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="mobile-drawer-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="shop.html"><i class="fa-solid fa-gem"></i> Shop Collection</a>
+      <a href="products.html"><i class="fa-solid fa-boxes-stacked"></i> All Products</a>
+      <a href="makeup.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Makeup</a>
+      <a href="skincare.html"><i class="fa-solid fa-droplet"></i> Skincare</a>
+      <a href="haircare.html"><i class="fa-solid fa-spa"></i> Haircare</a>
+      <a href="fragrance.html"><i class="fa-solid fa-spray-can-sparkles"></i> Fragrance</a>
+      <a href="offers.html"><i class="fa-solid fa-percent"></i> Offers</a>
+      <a href="account.html"><i class="fa-solid fa-user-circle"></i> My Account</a>
+    </nav>
+  </aside>
+
+  <main class="shop-page-wrap">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>All Products</span>
+      </div>
+
+      <div class="section-title-wrap" style="text-align:left; margin-bottom: 24px;">
+        <span class="section-eyebrow">Catalogue</span>
+        <h1 class="section-title" style="font-size:2.4rem;">Luméra Beauty Catalogue</h1>
+        <p class="section-desc">Browse all 50 pure, performance-driven cosmetic formulations.</p>
+      </div>
+
+      <div class="shop-layout-grid">
+        <aside class="filter-sidebar">
+          <div class="filter-header">
+            <h3>Filter Products</h3>
+            <button class="btn-clear-filters" id="clearFiltersBtn">Reset</button>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-title">Categories</div>
+            <div class="filter-options">
+              <label class="filter-option-label"><span><input type="checkbox" name="filterCategory" value="Makeup"> Makeup</span></label>
+              <label class="filter-option-label"><span><input type="checkbox" name="filterCategory" value="Skincare"> Skincare</span></label>
+              <label class="filter-option-label"><span><input type="checkbox" name="filterCategory" value="Haircare"> Haircare</span></label>
+              <label class="filter-option-label"><span><input type="checkbox" name="filterCategory" value="Fragrance"> Fragrance</span></label>
+              <label class="filter-option-label"><span><input type="checkbox" name="filterCategory" value="Body Care"> Body Care</span></label>
+              <label class="filter-option-label"><span><input type="checkbox" name="filterCategory" value="Lip Care"> Lip Care</span></label>
+            </div>
+          </div>
+          <div class="filter-group">
+            <div class="filter-group-title">Price Range (₹)</div>
+            <div class="price-range-inputs">
+              <input type="number" id="minPriceInput" placeholder="Min" min="0">
+              <span>–</span>
+              <input type="number" id="maxPriceInput" placeholder="Max" min="0">
+            </div>
+          </div>
+        </aside>
+
+        <section>
+          <div class="shop-controls-bar">
+            <div class="results-count" id="resultsCount">Showing Products</div>
+            <div class="shop-sort-wrap">
+              <label for="sortSelect">Sort:</label>
+              <select id="sortSelect" class="sort-select">
+                <option value="featured">Featured</option>
+                <option value="bestselling">Best Selling</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Rating</option>
+              </select>
+            </div>
+          </div>
+          <div class="product-grid" id="shopProductsGrid"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card">
+      <button class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <div id="toastContainer"></div>
+  <button id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+        <div class="payment-icons"><i class="fa-solid fa-credit-card"></i></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof initShopFilterEngine === 'function') {
+        initShopFilterEngine();
+      }
+    });
+  </script>
+</body>
+</html>

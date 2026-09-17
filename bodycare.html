@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Body Care Rituals | LUMÉRA BEAUTY</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="hamburger-btn action-icon-btn"><i class="fa-solid fa-bars"></i></button>
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="makeup.html" class="nav-link">Makeup</a>
+          <a href="skincare.html" class="nav-link">Skincare</a>
+          <a href="bodycare.html" class="nav-link active">Body Care</a>
+          <a href="lipcare.html" class="nav-link">Lip Care</a>
+          <a href="offers.html" class="nav-link">Offers</a>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle-btn action-icon-btn"><i class="fa-solid fa-moon"></i></button>
+          <a href="wishlist.html" class="action-icon-btn" title="Wishlist"><i class="fa-regular fa-heart"></i><span class="badge-count wishlist-count-badge">0</span></a>
+          <a href="cart.html" class="action-icon-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="badge-count cart-count-badge">0</span></a>
+          <a href="account.html" class="action-icon-btn" title="Account"><i class="fa-regular fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+      <button class="mobile-drawer-close action-icon-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="mobile-drawer-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="shop.html"><i class="fa-solid fa-gem"></i> Shop Collection</a>
+      <a href="bodycare.html"><i class="fa-solid fa-feather"></i> Body Care</a>
+      <a href="lipcare.html"><i class="fa-solid fa-heart"></i> Lip Care</a>
+    </nav>
+  </aside>
+
+  <main class="shop-page-wrap">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Body Care</span>
+      </div>
+
+      <div class="section-title-wrap" style="text-align:left; margin-bottom: 32px;">
+        <span class="section-eyebrow">Botanical Body Wellness</span>
+        <h1 class="section-title" style="font-size:2.5rem;">Velvet Body Care</h1>
+        <p class="section-desc">Rich body butters, whipped scrubs, and shimmering dry oils for soft, supple skin.</p>
+      </div>
+
+      <div class="product-grid" id="shopProductsGrid"></div>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card">
+      <button class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <div id="toastContainer"></div>
+  <button id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/whatsapp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof initShopFilterEngine === 'function') {
+        initShopFilterEngine('Body Care');
+      }
+    });
+  </script>
+</body>
+</html>

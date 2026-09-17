@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Product Enquiry & Wholesale | LUMÉRA BEAUTY</title>
+  <meta name="description" content="Generate direct WhatsApp product inquiries and wholesale order quotes for Luméra Beauty.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 40px 0 80px;">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>WhatsApp Enquiry</span>
+      </div>
+
+      <div class="auth-card" style="max-width: 600px;">
+        
+        <div style="text-align: center; margin-bottom: 24px;">
+          <div style="display:inline-flex; width:64px; height:64px; border-radius:50%; background:#25D366; color:#fff; align-items:center; justify-content:center; font-size:2rem; margin-bottom:16px;">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <span class="section-eyebrow">Instant WhatsApp Dispatch</span>
+          <h1 class="section-title" style="font-size:2rem;">Product & Wholesale Enquiry</h1>
+          <p class="section-desc">
+            Fill in the details below to generate a pre-formatted WhatsApp message directly to our official business number (+91 9887972121).
+          </p>
+        </div>
+
+        <form id="enquiryForm">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="enquiryName">Full Name *</label>
+              <input type="text" id="enquiryName" class="form-input" placeholder="e.g. Shalini Roy" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="enquiryMobile">Mobile Number *</label>
+              <input type="tel" id="enquiryMobile" class="form-input" placeholder="9887972121" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="enquiryEmail">Email Address *</label>
+            <input type="email" id="enquiryEmail" class="form-input" placeholder="shalini@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="enquiryProduct">Product Name / Specific Formulation</label>
+            <input type="text" id="enquiryProduct" class="form-input" placeholder="e.g. Luméra Velvet Matte Lipstick (Ruby Noir)">
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="enquiryQuantity">Required Quantity (Units)</label>
+              <input type="text" id="enquiryQuantity" class="form-input" placeholder="e.g. 5 or 50 (Bulk)">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="enquiryBudget">Estimated Budget (₹)</label>
+              <input type="text" id="enquiryBudget" class="form-input" placeholder="e.g. ₹5,000 – ₹20,000">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="enquiryMessage">Message / Custom Requirements *</label>
+            <textarea id="enquiryMessage" class="form-input" rows="4" placeholder="Mention any specific shades, skin types, delivery timeline, or wholesale inquiry details." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-full btn-lg" style="background:#25D366; color:#fff; border:none; padding:14px; font-weight:600;">
+            <i class="fa-brands fa-whatsapp" style="font-size:1.2rem; margin-right:6px;"></i> Send via WhatsApp (+91 9887972121)
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/whatsapp.js"></script>
+</body>
+</html>

@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMÉRA BEAUTY — Premium Luxury Cosmetics & Skincare</title>
+  <meta name="description" content="Discover Luméra Beauty: Curated luxury makeup, clinical skincare, fine fragrances, and beauty rituals. Beauty That Feels Like You.">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Scroll Progress -->
+  <div id="scrollProgress"></div>
+
+  <!-- Page Loader -->
+  <div id="pageLoader">
+    <div class="loader-brand">LUMÉRA</div>
+    <div class="loader-spinner"></div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-text">
+      ✨ <span>COMPLIMENTARY SHIPPING</span> on orders above ₹999 | Use Code: <strong>GLOW20</strong> for 20% OFF
+    </div>
+    <div class="announcement-links">
+      <a href="enquiry.html"><i class="fa-brands fa-whatsapp"></i> Wholesale Enquiry</a>
+      <a href="order-tracking.html"><i class="fa-solid fa-truck-fast"></i> Track Order</a>
+      <a href="contact.html"><i class="fa-regular fa-envelope"></i> Help</a>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        
+        <!-- Mobile Hamburger -->
+        <button class="hamburger-btn action-icon-btn" aria-label="Open Navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo">
+          <span class="logo-main">LUMÉRA</span>
+          <span class="logo-sub">BEAUTY</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link active">Home</a>
+          <a href="shop.html" class="nav-link">Shop</a>
+          <a href="makeup.html" class="nav-link">Makeup</a>
+          <a href="skincare.html" class="nav-link">Skincare</a>
+          <a href="haircare.html" class="nav-link">Haircare</a>
+          <a href="fragrance.html" class="nav-link">Fragrance</a>
+          <a href="offers.html" class="nav-link">Offers</a>
+          <a href="new-arrivals.html" class="nav-link">New Arrivals</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <!-- Search Bar -->
+          <div class="header-search">
+            <form class="search-form">
+              <div class="search-input-wrap">
+                <i class="fa-solid fa-magnifying-glass search-btn"></i>
+                <input type="text" class="search-input" placeholder="Search lipstick, serum..." aria-label="Search">
+              </div>
+            </form>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button class="theme-toggle-btn action-icon-btn" title="Toggle Light/Dark Theme" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+
+          <!-- Wishlist -->
+          <a href="wishlist.html" class="action-icon-btn" title="Wishlist" aria-label="Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count wishlist-count-badge">0</span>
+          </a>
+
+          <!-- Cart -->
+          <a href="cart.html" class="action-icon-btn" title="Shopping Bag" aria-label="Shopping Bag">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="badge-count cart-count-badge">0</span>
+          </a>
+
+          <!-- Account -->
+          <a href="account.html" class="action-icon-btn" title="My Account" aria-label="Account">
+            <i class="fa-regular fa-user"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-nav-drawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <span class="logo-main">LUMÉRA</span>
+        <span class="logo-sub">BEAUTY</span>
+      </a>
+      <button class="mobile-drawer-close action-icon-btn" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    
+    <div style="padding: 16px 20px;">
+      <form class="search-form">
+        <div class="search-input-wrap" style="width: 100%;">
+          <i class="fa-solid fa-magnifying-glass search-btn"></i>
+          <input type="text" class="search-input" placeholder="Search luxury beauty...">
+        </div>
+      </form>
+    </div>
+
+    <nav class="mobile-drawer-links">
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="shop.html"><i class="fa-solid fa-gem"></i> Shop All Collection</a>
+      <a href="makeup.html"><i class="fa-solid fa-wand-magic-sparkles"></i> Makeup</a>
+      <a href="skincare.html"><i class="fa-solid fa-droplet"></i> Skincare</a>
+      <a href="haircare.html"><i class="fa-solid fa-spa"></i> Haircare</a>
+      <a href="fragrance.html"><i class="fa-solid fa-spray-can-sparkles"></i> Fragrance</a>
+      <a href="bodycare.html"><i class="fa-solid fa-feather"></i> Body Care</a>
+      <a href="lipcare.html"><i class="fa-solid fa-heart"></i> Lip Care</a>
+      <a href="offers.html"><i class="fa-solid fa-percent"></i> Exclusive Offers</a>
+      <a href="best-sellers.html"><i class="fa-solid fa-crown"></i> Best Sellers</a>
+      <a href="new-arrivals.html"><i class="fa-solid fa-star"></i> New Arrivals</a>
+      <a href="enquiry.html"><i class="fa-brands fa-whatsapp"></i> WhatsApp Enquiry</a>
+      <a href="account.html"><i class="fa-solid fa-user-circle"></i> My Account</a>
+      <a href="about.html"><i class="fa-solid fa-circle-info"></i> About Luméra</a>
+      <a href="contact.html"><i class="fa-solid fa-headset"></i> Contact Us</a>
+    </nav>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="fa-solid fa-sparkles"></i> The New Luméra Radiance Ritual
+          </div>
+          <h1 class="hero-title">
+            Discover Your <em>Beauty</em>.
+          </h1>
+          <p class="hero-subtitle">
+            Premium beauty products curated for your everyday glow. Crafted with dermatological precision and clean botanical extracts for radiant, effortless confidence.
+          </p>
+          <div class="hero-actions">
+            <a href="shop.html" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-bag-shopping"></i> SHOP NOW
+            </a>
+            <a href="#featured" class="btn btn-outline btn-lg">
+              EXPLORE COLLECTION
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrap">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80" alt="Luméra Luxury Beauty Model">
+          </div>
+
+          <!-- Floating Badge 1 -->
+          <div class="floating-card floating-card-1">
+            <div class="floating-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="floating-text">
+              <strong>100% Clean & Vegan</strong>
+              <span>Cruelty-free formulas</span>
+            </div>
+          </div>
+
+          <!-- Floating Badge 2 -->
+          <div class="floating-card floating-card-2">
+            <div class="floating-icon">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="floating-text">
+              <strong>4.9 / 5.0 Star Rating</strong>
+              <span>From 50,000+ happy clients</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Highlights -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <div class="trust-info">
+            <h4>Complimentary Shipping</h4>
+            <p>Free express delivery on orders over ₹999</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="trust-info">
+            <h4>100% Authentic Guarantee</h4>
+            <p>Dermatologically tested clean beauty</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-arrow-rotate-left"></i></div>
+          <div class="trust-info">
+            <h4>Hassle-Free Returns</h4>
+            <p>Easy 7-day doorstep replacement</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="trust-info">
+            <h4>WhatsApp Support</h4>
+            <p>Direct assistance via +91 9887972121</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="category-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Curated Collections</span>
+        <h2 class="section-title">Explore By Category</h2>
+        <p class="section-desc">From runway-ready pigments to cellular skin nutrition, discover rituals tailored for you.</p>
+      </div>
+
+      <div class="category-grid">
+        <!-- 1. Makeup -->
+        <a href="makeup.html" class="category-card">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Makeup">
+          <div class="category-card-content">
+            <h3>Makeup</h3>
+            <p>10 Products</p>
+            <span class="category-link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 2. Skincare -->
+        <a href="skincare.html" class="category-card">
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80" alt="Skincare">
+          <div class="category-card-content">
+            <h3>Skincare</h3>
+            <p>10 Products</p>
+            <span class="category-link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 3. Haircare -->
+        <a href="haircare.html" class="category-card">
+          <img src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=800&q=80" alt="Haircare">
+          <div class="category-card-content">
+            <h3>Haircare</h3>
+            <p>8 Products</p>
+            <span class="category-link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 4. Fragrance -->
+        <a href="fragrance.html" class="category-card">
+          <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=80" alt="Fragrance">
+          <div class="category-card-content">
+            <h3>Fragrance</h3>
+            <p>7 Products</p>
+            <span class="category-link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 5. Body Care -->
+        <a href="bodycare.html" class="category-card">
+          <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=80" alt="Body Care">
+          <div class="category-card-content">
+            <h3>Body Care</h3>
+            <p>5 Products</p>
+            <span class="category-link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 6. Lip Care -->
+        <a href="lipcare.html" class="category-card">
+          <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=800&q=80" alt="Lip Care">
+          <div class="category-card-content">
+            <h3>Lip Care</h3>
+            <p>5 Products</p>
+            <span class="category-link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 7. Beauty Tools -->
+        <a href="shop.html?category=Beauty+Tools" class="category-card">
+          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=80" alt="Beauty Tools">
+          <div class="category-card-content">
+            <h3>Beauty Tools</h3>
+            <p>5 Products</p>
+            <span class="category-link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <!-- 8. Gift Sets -->
+        <a href="shop.html?category=Gift+Sets" class="category-card">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="Gift Sets">
+          <div class="category-card-content">
+            <h3>Gift Sets</h3>
+            <p>Luxury Hampers</p>
+            <span class="category-link-btn">Explore <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products Section -->
+  <section class="products-section" id="featured" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Signature Formulations</span>
+        <h2 class="section-title">Featured Beauty Picks</h2>
+        <p class="section-desc">Hand-selected best sellers acclaimed by top beauty editors and discerning skin enthusiasts.</p>
+      </div>
+
+      <div class="product-grid" id="featuredProductsGrid">
+        <!-- Dynamically rendered via JS -->
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="shop.html" class="btn btn-dark btn-lg">
+          VIEW ALL 50 PRODUCTS <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banner Section -->
+  <section class="promo-banner-section">
+    <div class="container">
+      <div class="promo-banner">
+        <div class="promo-content">
+          <div class="hero-tag" style="background: var(--bg-secondary); margin-bottom: 14px;">Limited Edition Offer</div>
+          <h2>Glow Season Radiance Sale</h2>
+          <p>Treat your skin to antioxidant serums, hydrating lip oils, and velvet matte lipsticks. Enjoy an exclusive 20% savings on purchases over ₹1,500.</p>
+          <div class="promo-coupon-badge">
+            <i class="fa-solid fa-ticket"></i> USE COUPON: <strong>GLOW20</strong>
+          </div>
+          <div>
+            <a href="offers.html" class="btn btn-rose btn-lg">SHOP PROMOTION</a>
+          </div>
+        </div>
+        <div class="promo-image">
+          <img src="https://images.unsplash.com/photo-1596704017254-9b121068fb31?auto=format&fit=crop&w=800&q=80" alt="Beauty Promo Hamper">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Sellers Grid -->
+  <section class="products-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Customer Favorites</span>
+        <h2 class="section-title">Best Sellers</h2>
+        <p class="section-desc">Our most loved, highest-rated formulas back in stock by popular demand.</p>
+      </div>
+
+      <div class="product-grid" id="bestSellersGrid">
+        <!-- Dynamically populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals Grid -->
+  <section class="products-section" style="background: var(--bg-secondary); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-eyebrow">Just Dropped</span>
+        <h2 class="section-title">New Arrivals</h2>
+        <p class="section-desc">Explore the newest formulations, peptide blends, and haute perfumerie extraits.</p>
+      </div>
+
+      <div class="product-grid" id="newArrivalsGrid">
+        <!-- Dynamically populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="quickViewContent"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" title="Back to Top" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Brand Col -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <span class="logo-main">LUMÉRA</span>
+            <span class="logo-sub">BEAUTY</span>
+          </a>
+          <p>
+            "Beauty That Feels Like You."<br>
+            Elevating your daily beauty ritual with dermatologically tested, clean, cruelty-free cosmetic formulations.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-btn" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+          </div>
+        </div>
+
+        <!-- Shop Links -->
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <div class="footer-links">
+            <a href="shop.html">All Products</a>
+            <a href="makeup.html">Makeup</a>
+            <a href="skincare.html">Skincare</a>
+            <a href="haircare.html">Haircare</a>
+            <a href="fragrance.html">Fragrance</a>
+            <a href="bodycare.html">Body Care</a>
+            <a href="lipcare.html">Lip Care</a>
+          </div>
+        </div>
+
+        <!-- About & Help -->
+        <div class="footer-col">
+          <h4>Company</h4>
+          <div class="footer-links">
+            <a href="about.html">Our Story</a>
+            <a href="best-sellers.html">Best Sellers</a>
+            <a href="new-arrivals.html">New Arrivals</a>
+            <a href="offers.html">Special Offers</a>
+            <a href="enquiry.html">Wholesale Enquiry</a>
+            <a href="faq.html">FAQs</a>
+          </div>
+        </div>
+
+        <!-- Customer Service & Policies -->
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <div class="footer-links">
+            <a href="contact.html">Contact Us</a>
+            <a href="my-orders.html">My Orders</a>
+            <a href="order-tracking.html">Track Order</a>
+            <a href="shipping-policy.html">Shipping Policy</a>
+            <a href="return-policy.html">Returns & Refunds</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms.html">Terms & Conditions</a>
+          </div>
+        </div>
+
+        <!-- Newsletter Col -->
+        <div class="footer-col footer-col-newsletter">
+          <h4>Join Luméra VIP</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 12px;">
+            Subscribe to receive insider access to new launches, beauty tips, and 15% off your first order.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 Luméra Beauty. All Rights Reserved. Luxury Cosmetics & Skincare.
+        </div>
+        <div class="payment-icons">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="MasterCard"></i>
+          <i class="fa-brands fa-google-pay" title="Google Pay"></i>
+          <i class="fa-solid fa-credit-card" title="UPI & Cards"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/wishlist.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/payment.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/whatsapp.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof initHomePage === 'function') {
+        initHomePage();
+      }
+    });
+  </script>
+</body>
+</html>

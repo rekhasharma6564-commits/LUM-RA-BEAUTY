@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Sign In | LUMÉRA BEAUTY</title>
+  <meta name="description" content="Sign in to your Luméra Beauty account.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding: 60px 0;">
+    <div class="container">
+      <div class="auth-card">
+        
+        <div class="section-title-wrap" style="text-align:center; margin-bottom: 24px;">
+          <span class="section-eyebrow">VIP Access</span>
+          <h1 class="section-title" style="font-size:2rem;">Sign In</h1>
+          <p class="section-desc">Access your beauty bag, wishlist, and exclusive discounts.</p>
+        </div>
+
+        <form id="loginForm">
+          <div class="form-group">
+            <label class="form-label" for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" class="form-input" placeholder="user@example.com" value="radhika.sen@lumera.com" required>
+          </div>
+
+          <div class="form-group">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <label class="form-label" for="loginPassword" style="margin:0;">Password</label>
+              <a href="#" style="font-size:0.78rem; color:var(--accent-gold);" onclick="showToast('Password reset link simulated to your email', 'info'); return false;">Forgot Password?</a>
+            </div>
+            <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" value="lumera2026" required>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:20px;">
+            <input type="checkbox" id="rememberMe" checked>
+            <label for="rememberMe" style="font-size:0.85rem; color:var(--text-secondary); cursor:pointer;">Keep me signed in</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full btn-lg">
+            Sign In to Account
+          </button>
+        </form>
+
+        <div style="text-align:center; margin-top:24px; padding-top:20px; border-top:1px solid var(--border-color); font-size:0.88rem; color:var(--text-secondary);">
+          Don't have a Luméra account? <a href="signup.html" style="color:var(--accent-gold); font-weight:600;">Sign Up</a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

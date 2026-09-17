@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout & Shipping Details | LUMÉRA BEAUTY</title>
+  <meta name="description" content="Enter shipping address and select delivery option for Luméra Beauty order.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <div style="font-size:0.85rem; font-weight:600; letter-spacing:1px; color:var(--accent-gold);">
+          <i class="fa-solid fa-lock"></i> SECURE CHECKOUT
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-page-wrap">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="cart.html">Cart</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Shipping & Delivery</span>
+      </div>
+
+      <div class="checkout-grid">
+        
+        <!-- Form Section -->
+        <div>
+          <div class="checkout-form-card">
+            <h2 style="font-size: 1.5rem; margin-bottom: 20px;">1. Delivery Address</h2>
+            <form id="checkoutForm">
+              
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="checkoutFullName">Full Name *</label>
+                  <input type="text" id="checkoutFullName" class="form-input" placeholder="e.g. Radhika Sen" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkoutMobile">Mobile Phone Number *</label>
+                  <input type="tel" id="checkoutMobile" class="form-input" placeholder="e.g. 9887972121" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkoutEmail">Email Address (for order tracking & receipt) *</label>
+                <input type="email" id="checkoutEmail" class="form-input" placeholder="radhika@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkoutAddress">Street Address / Apartment / Landmark *</label>
+                <input type="text" id="checkoutAddress" class="form-input" placeholder="Flat 402, Lotus Tower, MG Road" required>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="checkoutCity">City *</label>
+                  <input type="text" id="checkoutCity" class="form-input" placeholder="Mumbai" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="checkoutState">State *</label>
+                  <input type="text" id="checkoutState" class="form-input" placeholder="Maharashtra" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="checkoutPincode">PIN Code / Postal Code *</label>
+                <input type="text" id="checkoutPincode" class="form-input" placeholder="400001" required>
+              </div>
+
+              <h2 style="font-size: 1.5rem; margin: 32px 0 16px;">2. Shipping Method</h2>
+              
+              <div class="delivery-options-wrap">
+                <div class="delivery-option-card active" data-method="standard">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                    <strong>Standard Delivery</strong>
+                    <span style="color:var(--accent-gold); font-weight:600;">FREE over ₹999</span>
+                  </div>
+                  <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Delivered within 3-5 business days across India.</p>
+                </div>
+
+                <div class="delivery-option-card" data-method="express">
+                  <div style="display:flex; justify-content:space-between; margin-bottom:4px;">
+                    <strong>Priority Express Courier (₹199)</strong>
+                    <span style="color:var(--accent-rose); font-weight:600;">⚡ Fast</span>
+                  </div>
+                  <p style="font-size:0.8rem; color:var(--text-secondary); margin:0;">Guaranteed 24-48 hour express air delivery.</p>
+                </div>
+              </div>
+
+              <div style="margin-top: 32px;">
+                <button type="submit" class="btn btn-primary btn-full btn-lg">
+                  Continue to Payment <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Order Summary Sidebar -->
+        <div class="order-summary-card">
+          <h3 class="summary-title">Order Items</h3>
+          
+          <div id="checkoutItemsSummary" style="max-height: 250px; overflow-y: auto; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px;">
+            <!-- Rendered by checkout.js -->
+          </div>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="checkoutSubtotal">₹0</span>
+          </div>
+
+          <div class="summary-row" style="color: #16a34a;">
+            <span>Discount Applied</span>
+            <span id="checkoutDiscount">-₹0</span>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping</span>
+            <span id="checkoutShipping">FREE</span>
+          </div>
+
+          <div class="summary-row">
+            <span>GST (5%)</span>
+            <span id="checkoutTax">₹0</span>
+          </div>
+
+          <div class="summary-row summary-total">
+            <span>Amount Payable</span>
+            <span id="checkoutGrandTotal">₹0</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

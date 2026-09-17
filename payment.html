@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Payment Portal | LUMÉRA BEAUTY</title>
+  <meta name="description" content="Select UPI, Credit Card, Net Banking, or COD to complete your Luméra Beauty order.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div id="scrollProgress"></div>
+  <div id="pageLoader"><div class="loader-brand">LUMÉRA</div><div class="loader-spinner"></div></div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="brand-logo"><span class="logo-main">LUMÉRA</span><span class="logo-sub">BEAUTY</span></a>
+        <div style="font-size:0.85rem; font-weight:600; color:var(--accent-gold);">
+          <i class="fa-solid fa-shield-halved"></i> 100% SECURE DEMO PAYMENT GATEWAY
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-page-wrap">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="cart.html">Cart</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="checkout.html">Shipping</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Payment Method</span>
+      </div>
+
+      <div class="checkout-grid">
+        
+        <!-- Payment Options Form -->
+        <div class="checkout-form-card">
+          <h2 style="font-size: 1.5rem; margin-bottom: 8px;">Select Payment Option</h2>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 24px;">
+            Choose your preferred method. All transactions are securely encrypted.
+          </p>
+
+          <!-- Payment Tabs -->
+          <div class="payment-tabs-nav">
+            <button class="payment-tab-btn active" data-method="qr" id="tabBtn_qr">
+              <i class="fa-solid fa-qrcode"></i> Scan QR Code
+            </button>
+            <button class="payment-tab-btn" data-method="upi" id="tabBtn_upi">
+              <i class="fa-solid fa-mobile-screen-button"></i> UPI ID / VPA
+            </button>
+            <button class="payment-tab-btn" data-method="card" id="tabBtn_card">
+              <i class="fa-solid fa-credit-card"></i> Card (Debit/Credit)
+            </button>
+            <button class="payment-tab-btn" data-method="netbanking" id="tabBtn_netbanking">
+              <i class="fa-solid fa-building-columns"></i> Net Banking
+            </button>
+            <button class="payment-tab-btn" data-method="cod" id="tabBtn_cod">
+              <i class="fa-solid fa-money-bill-wave"></i> Cash on Delivery
+            </button>
+          </div>
+
+          <!-- 0. QR Code Pane (Scan & Pay) -->
+          <div class="payment-pane active" id="paymentPane_qr">
+            <div class="qr-payment-container">
+              <h3 class="qr-header-title">Scan QR Code to Pay</h3>
+              <p class="qr-header-subtitle">Open GPay, PhonePe, Paytm, BHIM or any banking UPI app to scan and pay.</p>
+
+              <!-- Supported UPI Apps Row -->
+              <div class="qr-apps-row">
+                <span class="qr-app-badge"><i class="fa-brands fa-google-pay"></i> Google Pay</span>
+                <span class="qr-app-badge"><i class="fa-solid fa-bolt"></i> PhonePe</span>
+                <span class="qr-app-badge"><i class="fa-solid fa-wallet"></i> Paytm</span>
+                <span class="qr-app-badge"><i class="fa-solid fa-building-columns"></i> Any UPI App</span>
+              </div>
+
+              <!-- QR Card Display -->
+              <div class="qr-card-display">
+                <div class="qr-amount-banner">
+                  AMOUNT PAYABLE: <span class="qrAmountDisplay">₹0</span>
+                </div>
+
+                <div class="qr-image-wrapper">
+                  <img id="paymentQrImg" src="assets/qr-code.png" alt="Luméra UPI Payment QR Code">
+                </div>
+
+                <div class="qr-vpa-details">
+                  <span>UPI ID: <strong id="vpaIdDisplay">lumera.beauty@okhdfcbank</strong></span>
+                  <button type="button" class="qr-copy-btn" id="copyVpaBtn" title="Copy UPI ID">
+                    <i class="fa-regular fa-copy"></i> Copy
+                  </button>
+                </div>
+              </div>
+
+              <!-- Status Indicator & Timer -->
+              <div class="qr-status-indicator">
+                <span class="qr-badge pending" id="qrStatusBadge">
+                  <i class="fa-solid fa-circle-notch fa-spin"></i> Awaiting Payment Confirmation...
+                </span>
+                <span class="qr-timer-pill" id="qrExpiryTimer">
+                  <i class="fa-regular fa-clock"></i> Expires in: <span id="qrTimerText">09:59</span>
+                </span>
+              </div>
+
+              <!-- Alert Box: Explicit Success or Not Paid Error Message -->
+              <div id="qrAlertBox" class="qr-alert-box">
+                <!-- Injected dynamically via payment.js -->
+              </div>
+
+              <!-- Verification Form & User Actions -->
+              <div class="qr-verification-form">
+                <label class="form-label" for="qrUtrInput" style="font-size:0.85rem; margin-bottom:6px;">
+                  UPI Reference / UTR Number (Optional):
+                </label>
+                <input type="text" id="qrUtrInput" class="form-input" placeholder="e.g. 12-digit UTR (from GooglePay/PhonePe)" maxlength="16">
+                <p style="font-size:0.75rem; color:var(--text-muted); margin-top:4px; margin-bottom:12px;">
+                  If you have completed payment on your mobile app, confirm below to generate order.
+                </p>
+
+                <div class="qr-action-buttons">
+                  <button type="button" id="btnVerifyQrPayment" class="btn-qr-verify">
+                    <i class="fa-solid fa-circle-check"></i> I Have Paid — Verify & Confirm
+                  </button>
+                  <button type="button" id="btnNotPaidCancel" class="btn-qr-cancel" title="Not paid yet">
+                    <i class="fa-solid fa-xmark"></i> Not Paid Yet
+                  </button>
+                </div>
+              </div>
+
+              <!-- Quick Simulation Tools for Verification -->
+              <div class="qr-simulation-tools">
+                <span style="font-size:0.78rem; font-weight:600; color:var(--text-secondary);">
+                  <i class="fa-solid fa-flask"></i> Payment Testing Controls:
+                </span>
+                <div class="qr-simulation-btns">
+                  <button type="button" id="simPaidBtn" class="btn-sim btn-sim-success">
+                    <i class="fa-solid fa-check"></i> Simulate Payment Succeeded
+                  </button>
+                  <button type="button" id="simNotPaidBtn" class="btn-sim btn-sim-fail">
+                    <i class="fa-solid fa-circle-xmark"></i> Simulate Payment Not Done / Failed
+                  </button>
+                </div>
+              </div>
+
+              <!-- Custom QR Image Source / Folder Picker -->
+              <div class="qr-custom-source-toggle">
+                <span>Current QR File: <code id="currentQrPathDisplay">assets/qr-code.png</code></span>
+                &bull; <a href="javascript:void(0)" id="toggleCustomQrSource" style="color:var(--accent-gold); text-decoration:underline;">Change Folder / Image</a>
+
+                <div id="customQrSourceBox" class="qr-custom-source-box">
+                  <label class="form-label" style="font-size:0.8rem; margin-bottom:4px;">Set Custom QR Image Path or Choose from Folder:</label>
+                  <div style="display:flex; gap:6px; margin-bottom:8px;">
+                    <input type="text" id="customQrPathInput" class="form-input" placeholder="e.g. assets/qr-code.png or assets/images/qr-code.png" style="font-size:0.8rem; padding:6px 10px;">
+                    <button type="button" id="applyCustomQrPathBtn" class="btn btn-outline" style="padding:6px 12px; font-size:0.8rem; white-space:nowrap;">Apply</button>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span style="font-size:0.75rem; color:var(--text-muted);">Or select file from device:</span>
+                    <input type="file" id="qrFileInput" accept="image/*" style="font-size:0.75rem;">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 1. UPI ID Pane -->
+          <div class="payment-pane" id="paymentPane_upi">
+            <div style="padding: 16px 0;">
+              <p style="font-size: 0.9rem; margin-bottom: 12px;">Enter your Virtual Payment Address (UPI ID) to receive a payment collect request:</p>
+              <div style="max-width: 440px; margin: 0 auto; text-align: left;">
+                <label class="form-label" for="upiIdInput">UPI ID / VPA</label>
+                <input type="text" id="upiIdInput" class="form-input" placeholder="e.g. yourname@okhdfcbank">
+                <p style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;">Supported handles: @okhdfcbank, @okaxis, @oksbi, @paytm, @ybl, etc.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Card Pane -->
+          <div class="payment-pane" id="paymentPane_card">
+            <div class="form-group">
+              <label class="form-label" for="cardNumberInput">Card Number</label>
+              <input type="text" id="cardNumberInput" class="form-input" placeholder="4111 2222 3333 4444" maxlength="19">
+            </div>
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label class="form-label" for="cardExpiryInput">Expiry Date (MM/YY)</label>
+                <input type="text" id="cardExpiryInput" class="form-input" placeholder="08/29" maxlength="5">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="cardCvvInput">Security CVV</label>
+                <input type="password" id="cardCvvInput" class="form-input" placeholder="123" maxlength="4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cardHolderInput">Name on Card</label>
+              <input type="text" id="cardHolderInput" class="form-input" placeholder="e.g. RADHIKA SEN">
+            </div>
+          </div>
+
+          <!-- 3. Net Banking Pane -->
+          <div class="payment-pane" id="paymentPane_netbanking">
+            <label class="form-label">Select Your Bank:</label>
+            <div style="display:grid; grid-template-columns: repeat(2, 1fr); gap:10px; margin-bottom:16px;">
+              <label style="border:1px solid var(--border-color); padding:10px; border-radius:6px; cursor:pointer; display:flex; align-items:center; gap:8px;">
+                <input type="radio" name="bank" checked> HDFC Bank
+              </label>
+              <label style="border:1px solid var(--border-color); padding:10px; border-radius:6px; cursor:pointer; display:flex; align-items:center; gap:8px;">
+                <input type="radio" name="bank"> ICICI Bank
+              </label>
+              <label style="border:1px solid var(--border-color); padding:10px; border-radius:6px; cursor:pointer; display:flex; align-items:center; gap:8px;">
+                <input type="radio" name="bank"> State Bank of India
+              </label>
+              <label style="border:1px solid var(--border-color); padding:10px; border-radius:6px; cursor:pointer; display:flex; align-items:center; gap:8px;">
+                <input type="radio" name="bank"> Axis Bank
+              </label>
+            </div>
+          </div>
+
+          <!-- 4. COD Pane -->
+          <div class="payment-pane" id="paymentPane_cod">
+            <div style="background:var(--accent-gold-light); padding:16px; border-radius:var(--radius-sm); color:var(--text-primary); font-size:0.9rem;">
+              <i class="fa-solid fa-hand-holding-dollar" style="color:var(--accent-gold); font-size:1.2rem; margin-right:6px;"></i>
+              <strong>Cash on Delivery Available:</strong> Pay securely in cash or UPI QR at your doorstep upon courier arrival.
+            </div>
+          </div>
+
+          <div style="margin-top: 32px;">
+            <button id="payNowButton" class="btn btn-primary btn-full btn-lg">
+              <i class="fa-solid fa-lock"></i> AUTHORIZE & PAY <span id="payButtonAmount">₹0</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Summary -->
+        <div class="order-summary-card">
+          <h3 class="summary-title">Order Total</h3>
+          
+          <div style="margin-bottom:16px; font-size:0.88rem; color:var(--text-secondary); border-bottom:1px solid var(--border-color); padding-bottom:12px;">
+            <div>Deliver to: <strong id="paymentCustomerName" style="color:var(--text-primary);">Customer</strong></div>
+            <div id="paymentCustomerAddress" style="font-size:0.8rem; margin-top:2px;">Address</div>
+          </div>
+
+          <div class="summary-row summary-total">
+            <span>Total Payable</span>
+            <span id="paymentGrandTotal">₹0</span>
+          </div>
+
+          <div style="margin-top:24px; padding:14px; background:var(--bg-tertiary); border-radius:var(--radius-sm); font-size:0.78rem; line-height:1.5; color:var(--text-secondary);">
+            <i class="fa-solid fa-info-circle" style="color:var(--accent-gold);"></i> <strong>Demo Environment:</strong> All checkout simulations complete locally and prepare WhatsApp order dispatches.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="toastContainer"></div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>© 2026 Luméra Beauty. All Rights Reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/payment.js"></script>
+  <script src="js/whatsapp.js"></script>
+</body>
+</html>
